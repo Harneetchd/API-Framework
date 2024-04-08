@@ -6,7 +6,11 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.aventstack.extentreports.utils.ExceptionUtil;
+
+
 import lombok.extern.slf4j.Slf4j;
+
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -40,6 +44,7 @@ public class ReportGenerator implements ITestListener {
     private ExtentReports moduleWiseExtent;
     private String suiteName;
     private String methodParameters = "";
+    
 
     public static String imgToBase64String(final RenderedImage img, final String formatName) {
         final ByteArrayOutputStream os = new ByteArrayOutputStream();
@@ -82,7 +87,7 @@ public class ReportGenerator implements ITestListener {
             extent.flush();
             moduleWiseExtent.flush();
         } catch (Exception e) {
-            log.error("After test failure things are getting failed due to  :: " + e.getMessage());
+           log.error("After test failure things are getting failed due to  :: " + e.getMessage());
         } finally {
             didOnTestStartGotExecuted = false;
         }
@@ -112,6 +117,8 @@ public class ReportGenerator implements ITestListener {
             methodParameters += " ) ";
             methodParameters = methodParameters.replace("*", "");
         }
+        
+        log.info("\n\n" + "<< --- TestCase START --->> " + testName + methodParameters + "\n");
         log.info("\n\n" + "<< --- TestCase START --->> " + testName + methodParameters + "\n");
         logger = extent.createTest(testName + methodParameters);
         logger.assignCategory(suiteName);
@@ -173,9 +180,9 @@ public class ReportGenerator implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        log.info("****************************************************************************************");
-        log.info("                                " + context.getName() + "       ");
-        log.info("----------------------------------------------------------------------------------------");
+       log.info("****************************************************************************************");
+       log.info("                                " + context.getName() + "       ");
+       log.info("----------------------------------------------------------------------------------------");
         File extentReports = new File(EXTENT_REPORT_PATH);
         if (!extentReports.exists()) {
             extentReports.mkdirs();

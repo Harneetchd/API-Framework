@@ -2,6 +2,8 @@ package org.techArk.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 import io.restassured.RestAssured;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
@@ -9,6 +11,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
+
 import org.techArk.requestPOJO.AddDataRequest;
 import org.techArk.requestPOJO.DeleteDataRequest;
 import org.techArk.requestPOJO.LoginRequest;
@@ -28,12 +31,15 @@ public class APIHelper {
 
     public APIHelper() {
         RestAssured.baseURI = EnvironmentDetails.getProperty("baseURL");
+       
         reqSpec = RestAssured.given();
         
     }
 
-    public Response login(String username, String password) {
-        LoginRequest loginRequest = LoginRequest.builder().username(username).password(password).build(); // payload -/*{"username": "mithun@ta.com","password": "mithun"}*/
+    public Response login( String username, String password) {
+    	
+         
+        LoginRequest loginRequest = LoginRequest.builder().username(username).password(password).build(); // creating payload -/*{"username": "mithun@ta.com","password": "mithun"}*/
       
         reqSpec.headers(getHeaders(true));
         Response response = null;
@@ -46,10 +52,13 @@ public class APIHelper {
                 List<LoginResponse> loginResponse = response.getBody().as(new TypeRef<List<LoginResponse>>() {
                 });
                 this.token = loginResponse.get(0).getToken();
+                
             }
         } catch (Exception e) {
             Assert.fail("Login functionality is failing due to :: " + e.getMessage());
         }
+        System.out.print("LOGIN CHECK");
+        response.prettyPrint();
         return response;
     }
 
@@ -113,8 +122,8 @@ public class APIHelper {
     
     public Response uploadFile()
     {
-    	Response response =  RestAssured.given().multiPart("file",new File("/Users/harneetkaur/eclipse-workspace/TechArkAPIAutomation_Framework/properties/ExpectedUsers.json"),"application/json")
-				            .post("https://the-internet.herokuapp.com/upload"); ;
+    	Response response =  reqSpec.multiPart("file",new File("/Users/harneetkaur/eclipse-workspace/TechArkAPIAutomation_Framework/properties/ExpectedUsers.json"),"application/json")
+				            .post("https://the-internet.herokuapp.com/upload");
     	return response;
     }
     

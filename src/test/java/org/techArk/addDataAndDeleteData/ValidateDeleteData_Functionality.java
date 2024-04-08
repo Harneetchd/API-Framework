@@ -28,8 +28,7 @@ public class ValidateDeleteData_Functionality extends BaseTest {
         faker = new Faker();
         apiHelper = new APIHelper();
         Response login = apiHelper.login(EnvironmentDetails.getProperty("username"), EnvironmentDetails.getProperty("password"));
-        userId = login.getBody().as(new TypeRef<List<LoginResponse>>() {
-        }).get(0).getUserid();
+        userId = login.getBody().as(new TypeRef<List<LoginResponse>>() { }).get(0).getUserid();
     }
 
     @Test(priority = 0, description = "validate add data functionality")
