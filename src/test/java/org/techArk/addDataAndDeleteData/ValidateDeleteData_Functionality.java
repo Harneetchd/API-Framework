@@ -1,5 +1,9 @@
 package org.techArk.addDataAndDeleteData;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import com.github.javafaker.Faker;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
