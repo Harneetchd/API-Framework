@@ -147,32 +147,6 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">org.techArk.login.ValidateLoginAPI_Functionality</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateLoginWithInValidCredentials">
-                  </a> <!-- validateLoginWithInValidCredentials -->
-                  <span class="method-name">validateLoginWithInValidCredentials</span>
-                  <em>
-(validate login functionality with invalid credentials)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateLoginWithValidCredentials">
-                  </a> <!-- validateLoginWithValidCredentials -->
-                  <span class="method-name">validateLoginWithValidCredentials</span>
-                  <em>
-(validate login functionality with valid credentials)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -214,6 +188,32 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.techArk.login.ValidateLoginAPI_Functionality</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateLoginWithInValidCredentials">
+                  </a> <!-- validateLoginWithInValidCredentials -->
+                  <span class="method-name">validateLoginWithInValidCredentials</span>
+                  <em>
+(validate login functionality with invalid credentials)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateLoginWithValidCredentials">
+                  </a> <!-- validateLoginWithValidCredentials -->
+                  <span class="method-name">validateLoginWithValidCredentials</span>
+                  <em>
+(validate login functionality with valid credentials)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -224,6 +224,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.techArk.listeners.ReportGenerator&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;org.techArk.login.ValidateLoginAPI_Functionality&quot;/&gt;
@@ -271,32 +274,32 @@ data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validateDeletedDataInGetData')
 data.setCell(0, 2, 'org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality')
-data.setCell(0, 3, 13817);
+data.setCell(0, 3, 11115);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'validateAddedDataInGetData')
 data.setCell(1, 2, 'org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality')
-data.setCell(1, 3, 12711);
+data.setCell(1, 3, 4475);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'validateLoginWithValidCredentials')
 data.setCell(2, 2, 'org.techArk.login.ValidateLoginAPI_Functionality')
-data.setCell(2, 3, 2518);
+data.setCell(2, 3, 2646);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'validateAddDataFunctionality')
 data.setCell(3, 2, 'org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality')
-data.setCell(3, 3, 416);
+data.setCell(3, 3, 1893);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'validateLoginWithInValidCredentials')
-data.setCell(4, 2, 'org.techArk.login.ValidateLoginAPI_Functionality')
-data.setCell(4, 3, 295);
+data.setCell(4, 1, 'validateDeleteData')
+data.setCell(4, 2, 'org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality')
+data.setCell(4, 3, 1858);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validateDeleteData')
-data.setCell(5, 2, 'org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality')
-data.setCell(5, 3, 285);
+data.setCell(5, 1, 'validateLoginWithInValidCredentials')
+data.setCell(5, 2, 'org.techArk.login.ValidateLoginAPI_Functionality')
+data.setCell(5, 3, 172);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -336,38 +339,38 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">30 ms</span>
+                <span class="method-start">37 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">validateLoginWithValidCredentials</span>
-                <span class="method-start">828 ms</span>
+                <span class="method-start">224 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateLoginWithInValidCredentials</span>
-                <span class="method-start">3352 ms</span>
+                <span class="method-start">2980 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">3650 ms</span>
+                <span class="method-start">3190 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">validateAddDataFunctionality</span>
-                <span class="method-start">3941 ms</span>
+                <span class="method-start">3471 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateAddedDataInGetData</span>
-                <span class="method-start">4369 ms</span>
+                <span class="method-start">5417 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateDeleteData</span>
-                <span class="method-start">17085 ms</span>
+                <span class="method-start">9926 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateDeletedDataInGetData</span>
-                <span class="method-start">17373 ms</span>
+                <span class="method-start">11832 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

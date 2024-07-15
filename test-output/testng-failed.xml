@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.techArk.login.ValidateLoginAPI_Functionality">
+      <class name="org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality">
         <methods>
+          <include name="validateDeletedDataInGetData"/>
+          <include name="validateAddDataFunctionality"/>
           <include name="beforeClass"/>
+          <include name="validateDeleteData"/>
           <include name="beforeSuite"/>
-          <include name="validateLoginWithValidCredentials"/>
         </methods>
-      </class> <!-- org.techArk.login.ValidateLoginAPI_Functionality -->
+      </class> <!-- org.techArk.addDataAndDeleteData.ValidateDeleteData_Functionality -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
